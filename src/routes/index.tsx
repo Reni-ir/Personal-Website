@@ -16,7 +16,7 @@ function HomePage() {
     <>
       {/* ==== START : HERO Section ==== */}
       <div className="about  relative  flex justify-end items-center flex-col h-dvh  overflow-hidden ">
-        <div className=" mx-auto w-full max-w-300  flex flex-col md:flex-row items-center justify-start overflow-hidden   ">
+        <div className=" mx-auto w-full max-w-300  flex flex-col md:flex-row items-end justify-start overflow-hidden ">
           {/* ---START  : Description */}
           <div className="flex-1 flex flex-col justify-center items-start gap-0 h-full w-full px-8 md:px-4s     ">
             <motion.h1
@@ -52,14 +52,15 @@ function HomePage() {
           {/* ---END  : Image */}
         </div>
         {/* ---START : LogoLoop ---- */}
-        <div className="overflow-hidden w-full max-w-400 h-24 ">
+
+        <div className="h-15 md:h-25 flex items-center shadow-xl shadow-accent justify-center w-full " dir="ltr">
           <MarqueeSection />
         </div>
         {/* ---END : LogoLoop ---- */}
       </div>
       {/* ==== END : HERO Section ====  */}
       {/* ====START : SKILL Section ==== */}
-       <Skill />
+      <Skill />
       {/* ====END : SKILL Section ==== */}
 
       {/* ====START : Experience Section ==== */}
@@ -67,8 +68,9 @@ function HomePage() {
       {/* ====END : Experience Section ==== */}
 
       {/* ====START : Footer Section ==== */}
-      <div className="relative">
+      <div className="relative ">
         <ElasticLine
+          className="h-20! z-50"
           releaseThreshold={150}
           strokeWidth={1}
           animateInTransition={{

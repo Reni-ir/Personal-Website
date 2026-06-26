@@ -1,76 +1,102 @@
-import { Marquee } from "./marquee";
 import { useEffect, useState } from "react";
-import { ReviewCard } from "./ReviewCard";
+import {
+  SiCplusplus,
+  SiCss,
+  SiDotnet,
+  SiHtml5,
+  SiJavascript,
+  SiNestjs,
+  SiNextdotjs,
+  SiPhp,
+  SiReact,
+  SiTypescript,
+} from "react-icons/si";
+import { InfiniteSlider } from "./infinite-slider";
 const reviews = [
   {
-    name: "HTML",
-    img: "https://cdn.simpleicons.org/html5/000000",
+    label: "HTML",
+    color: "#111111",
+    icon: SiHtml5,
   },
   {
-    name: "CSS",
-    img: "https://cdn.simpleicons.org/css/000000",
+    label: "CSS",
+    color: "#111111",
+    icon: SiCss,
   },
   {
-    name: "JavaScript",
-    img: "https://cdn.simpleicons.org/javascript/000000",
+    label: "JavaScript",
+    color: "#111111",
+    icon: SiJavascript,
   },
   {
-    name: "TypeScript",
-    img: "https://cdn.simpleicons.org/typescript/000000",
+    label: "TypeScript",
+    color: "#111111",
+    icon: SiTypescript,
   },
   {
-    name: "React",
-    img: "https://cdn.simpleicons.org/react/000000",
+    label: "React",
+    color: "#111111",
+    icon: SiReact,
   },
   {
-    name: "Next.js",
-    img: "https://cdn.simpleicons.org/nextdotjs/000000",
+    label: "Next.js",
+    color: "#111111",
+    icon: SiNextdotjs,
   },
   {
-    name: "NestJS",
-    img: "https://cdn.simpleicons.org/nestjs/000000",
+    label: "NestJS",
+    color: "#111111",
+    icon: SiNestjs,
   },
   {
-    name: ".NET Core",
-    img: "https://cdn.simpleicons.org/dotnet/000000",
+    label: ".NET Core",
+    color: "#111111",
+    icon: SiDotnet,
   },
   {
     name: "C#",
-    img: "https://cdn.simpleicons.org/tailwindcss/000000",
+    color: "#111111",
+    icon: SiCplusplus,
   },
   {
     name: "PHP",
-    img: "https://cdn.simpleicons.org/php/000000",
+    color: "#111111",
+    icon: SiPhp,
   },
 ];
 export function MarqueeSection() {
-    const [logoHeight , setLogoHeight] = useState<number>(50);
-    useEffect(()=>{
-        const handleResize = () =>{
-            const width = window.innerWidth;
-            if (width < 890 ) {
-                setLogoHeight (50);
-            }else setLogoHeight (80);
-
-        }
-        handleResize();
-        window.addEventListener("resize" , handleResize)
-        return () => window.removeEventListener("resize" , handleResize);
-    } , [])
+  const [logoHeight, setLogoHeight] = useState<number>(50);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 890) {
+        setLogoHeight(50);
+      } else setLogoHeight(80);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div className="relative flex w-full  flex-col items-center justify-center overflow-hidden ">
-      <Marquee pauseOnHover className="[--duration:40s] ">
-        {reviews.map((review) => (
-          <ReviewCard
-            key={review.img}
-            name={review.name}
-            height={logoHeight}
-            img={review.img}
-          />
-        ))}
-      </Marquee>
-      <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-linear-to-r"></div>
-      <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l"></div>
-    </div>
+    <>
+      <div className="w-full max-w-324 relative">
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent" />
+
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+
+        <InfiniteSlider gap={34} speed={50} reverse>
+          {reviews.map((item, index) => {
+            const Logo = item.icon;
+            return (
+              <div key={index}>
+                <Logo size={logoHeight} />
+              </div>
+            );
+          })}
+        </InfiniteSlider>
+      </div>
+    </>
+
+    // </div>
   );
 }

@@ -8,8 +8,8 @@ import {
 import type {ValueAnimationTransition} from "motion/react";
 import { useDimensions } from "@/hooks/use-dimensions"
 import { useElasticLineEvents } from "@/hooks/use-elastic-line-events"
-import { SiGithub } from "react-icons/si";
-
+import { SiGithub , SiTelegram } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 interface ElasticLineProps {
   isVertical?: boolean
   grabThreshold?: number
@@ -115,9 +115,15 @@ const ElasticLine: React.FC<ElasticLineProps> = ({
           fill="none"
         />
       </svg>
-      <div className="flex absolute left-5 md:left-10 bottom-10 z-20">
+      <div className="flex gap-2.5 absolute left-5 md:left-10 bottom-2 z-20">
         <a href="https://github.com/Reni-ir">
           <SiGithub size={24} />
+        </a>
+        <a href="https://linkedin.com/in/nikzadahmadreza">
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://t.me/nikzadahmadreza">
+          <SiTelegram size={24} />
         </a>
       </div>
     </>
@@ -125,3 +131,5 @@ const ElasticLine: React.FC<ElasticLineProps> = ({
 }
 
 export default ElasticLine
+
+

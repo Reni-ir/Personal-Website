@@ -4,8 +4,8 @@ import { HomeIcon } from "lucide-react";
 import { SpinningText } from "../ui/spinning-text";
 export const Header = () => {
   const menuItem = [
-    { name: "مهارت ها ", url: "/skill" },
-    { name: "نمونه کارها ", url: "/porfolio" },
+    { name: "مهارت ها ", url: "/#skill" },
+    { name: "نمونه کارها ", url: "/#portfolio" },
     { name: "مقالات ", url: "/blog" },
   ];
 
@@ -37,9 +37,9 @@ export const Header = () => {
         </div>
         <Link
           to={"/"}
-          className=" h-11.25 w-11.25 flex items-center justify-center rounded-full cursor-pointer bg-primary border-border"
+          className=" h-11.25 w-11.25 flex items-center justify-center rounded-full cursor-pointer bg-primary border-border shadow-2xl shadow-accent"
         >
-          <HomeIcon className="text-surface" size={14} />
+          <HomeIcon className="text-surface" size={24} />
         </Link>
       </motion.div>
 
