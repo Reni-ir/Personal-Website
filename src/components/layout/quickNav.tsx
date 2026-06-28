@@ -9,8 +9,8 @@ export const QuickNav = () =>{
    
       {
         icon: <Code2 size={18} />,
-        label: "مهارت ها ",
-        onClick: () => document.getElementById("skill")?.scrollIntoView({ behavior: "smooth" }),
+        label: "درباره",
+        onClick: () => document.getElementById("summary")?.scrollIntoView({ behavior: "smooth" }),
       },
       {
         icon: <BriefcaseBusiness size={18} />,

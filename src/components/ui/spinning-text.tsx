@@ -73,7 +73,7 @@ export function SpinningText({
 
   return (
     <motion.div
-      className={cn("relative top-4 md:top-0 ", className)}
+      className={cn("relative ", className)}
       style={{
         ...style,
       }}
