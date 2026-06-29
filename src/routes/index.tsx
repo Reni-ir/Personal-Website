@@ -71,7 +71,7 @@ function HomePage() {
       {/* ==== END : HERO Section ====  */}
       {/* ==== START : Summary Section ==== */}
       <div id="summary" className="summary relative  flex  justify-center items-center flex-col h-[90dvh]  overflow-hidden ">
-        <div className=" mx-auto w-full max-w-300 p-4 ">
+        <div className=" mx-auto w-full max-w-300 h-[80dvh] flex flex-col justify-center p-4 ">
       <ScrambleInSection />
 
       </div>

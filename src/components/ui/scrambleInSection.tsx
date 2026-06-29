@@ -34,7 +34,7 @@ export default function ScrambleInSection() {
   }, []);
 
   return (
-    <div className=" flex flex-col text-sm md:text-[34px] font-light justify-center items-start  text-foreground dark:text-muted  overflow-hidden text-center h-dvh">
+    <div className=" flex flex-col text-sm md:text-[34px] font-light justify-center items-start  text-foreground dark:text-muted  overflow-hidden text-center ">
       {titles.map((model, index) => (
         <ScrambleIn
           key={index}
