@@ -25,12 +25,17 @@ export default function ScrambleInSection() {
   const scrambleRefs = useRef<(ScrambleInHandle | null)[]>([]);
 
   useEffect(() => {
-    titles.forEach((_, index) => {
-      const delay = index * 50;
-      setTimeout(() => {
-        scrambleRefs.current[index]?.start();
-      }, delay);
-    });
+   const obs = new IntersectionObserver (([entry]) => {
+    if(entry.isIntersecting){
+      titles.forEach((_, index) => {
+        setTimeout(() => {
+          scrambleRefs.current[index]?.start();
+        }, index * 50);
+      });
+      obs.disconnect();
+    }
+   } , {threshold : 0.15 });
+   
   }, []);
 
   return (
@@ -42,9 +47,9 @@ export default function ScrambleInSection() {
             scrambleRefs.current[index] = el;
           }}
           text={model}
-          scrambleSpeed={24}
-          scrambledLetterCount={1}
-          autoStart={false}
+          scrambleSpeed={28}
+          scrambledLetterCount={5}
+          autoStart={true}
         />
       ))}
     </div>

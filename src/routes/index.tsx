@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import ahmadrezaNikzad from "@/assets/ahmadrezaNikzad.webp";
+import ahmadrezaNikzad from "@/assets/new-comp/AhmadrezaNikzad.webp";
 import { MarqueeSection } from "@/components/ui/marqueeSection";
 import ElasticLine from "@/components/fancy/physics/elastic-line";
 import Experience from "@/components/sections/Experience";

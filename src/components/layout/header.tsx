@@ -6,7 +6,7 @@ export const Header = () => {
   const menuItem = [
     { name: "درباره ", url: "/#summary" },
     { name: "نمونه کارها ", url: "/#portfolio" },
-    { name: "مقالات ", url: "/blog" },
+    { name: "ارتباط با من ", url: "/contactme" },
   ];
 
   return (
