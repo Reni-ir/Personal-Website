@@ -20,7 +20,7 @@ export const QuickNav = () =>{
       {
         icon: <Mail size={18} />,
         label: "ارتباط با من ",
-        onClick: () => window.location.href = "/#",
+        onClick: () => window.location.href = "/contactme",
       },
     ];
     return (
