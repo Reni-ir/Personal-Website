@@ -5,6 +5,7 @@ import SplashCursor from "@/components/SplashCursor";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import ElasticLine from "@/components/fancy/physics/elastic-line";
 
 
 export const Route = createRootRoute({
@@ -23,7 +24,7 @@ function Layout () {
     return () => lenis.destroy();
   } , [])
     return (
-      <>
+      <div className="min-h-dvh flex flex-col">
         <Header />
         <BackgroundRippleEffect />
         <SplashCursor
@@ -39,9 +40,27 @@ function Layout () {
           COLOR="#ef8f00"
         />
 
-        <Outlet />
+        <main className="flex-1">
+          <Outlet />
+        </main>
         <QuickNav />
-      </>
+
+        {/* ====START : Footer Section ==== */}
+        <div className="relative bottom-0 left-0 w-full ">
+          <ElasticLine
+            className="h-20! z-50"
+            releaseThreshold={150}
+            strokeWidth={1}
+            animateInTransition={{
+              type: "spring",
+              stiffness: 50,
+              damping: 5,
+              delay: 0.15,
+            }}
+          />
+        </div>
+        {/* ====END : Footer Section ==== */}
+      </div>
     );
 }
 

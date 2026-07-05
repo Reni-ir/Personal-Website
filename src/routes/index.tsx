@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import ahmadrezaNikzad from "@/assets/new-comp/AhmadrezaNikzad.webp";
 import { MarqueeSection } from "@/components/ui/marqueeSection";
-import ElasticLine from "@/components/fancy/physics/elastic-line";
 import Experience from "@/components/sections/Experience";
 import Skill from "@/components/sections/skill";
 import ScrambleInSection from "@/components/ui/scrambleInSection";
@@ -17,7 +16,7 @@ function HomePage() {
     <>
       {/* ==== START : HERO Section ==== */}
       <div className="about relative  flex  justify-end items-center flex-col h-dvh  overflow-hidden ">
-        <div className=" mx-auto w-full max-w-300  flex flex-col md:flex-row items-end justify-start overflow-hidden ">
+        <div className=" mx-auto w-full max-w-300 flex flex-col md:flex-row items-end justify-start overflow-hidden ">
           {/* ---START  : Description */}
           <div className="flex-1 flex flex-col justify-center items-start gap-0 h-full w-full px-8 md:px-4">
             <div>
@@ -86,21 +85,6 @@ function HomePage() {
       <Experience />
       {/* ====END : Experience Section ==== */}
 
-      {/* ====START : Footer Section ==== */}
-      <div className="relative ">
-        <ElasticLine
-          className="h-20! z-50"
-          releaseThreshold={150}
-          strokeWidth={1}
-          animateInTransition={{
-            type: "spring",
-            stiffness: 50,
-            damping: 5,
-            delay: 0.15,
-          }}
-        />
-      </div>
-      {/* ====END : Footer Section ==== */}
     </>
   );
 }
