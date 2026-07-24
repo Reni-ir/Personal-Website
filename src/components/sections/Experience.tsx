@@ -37,7 +37,7 @@ export default function Experience() {
   return (
     <div
       id="portfolio"
-      className="h-[50dvh] w-full relative flex items-center justify-center overflow-hidden "
+      className="h-[50dvh] md:h-dvh w-full relative flex items-center justify-center overflow-hidden "
     >
       <Globe className=" z-10 w-60 md:w-110" />
       <div className=" w-full relative bg-background/20 h-full max-w-300 overflow-hidden   ">
